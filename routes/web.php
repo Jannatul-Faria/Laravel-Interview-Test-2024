@@ -9,6 +9,9 @@ use App\Http\Controllers\ProfileController;
 Route::get('/', function () {
     return view('index');
 });
+Route::get('/form', function () {
+    return view('basic_form');
+})->name('form');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

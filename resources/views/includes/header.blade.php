@@ -24,4 +24,10 @@
 <link rel="stylesheet" href="{{ asset ('assets') }}/css/fancybox.css">
 <!-- Main Stylesheet -->
 <link rel="stylesheet" href="{{ asset ('assets') }}/css/dashboard.css">
-<!-- dark css -->
+
+
+ 
+ <!-- Country Select Css -->
+ <link rel="stylesheet" href="{{ asset ('assets') }}/css/niceCountryInput.css">
+ <link rel="stylesheet" href="{{ asset ('assets') }}/css/jsuites.css">
+ <!-- dark css -->
