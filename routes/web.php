@@ -1,16 +1,27 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CityController;
+use App\Http\Controllers\StateController;
+use App\Http\Controllers\CountryController;
+use App\Http\Controllers\ProfileController;
 
-// Route::get('/{page?}', function ($page = null) {
-//     $page = $page ?? 'index.blade.php';
+Route::get('/', function () {
+    return view('index');
+});
 
-//     $path = public_path("index.blade.php");
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-//     if (File::exists($path)) {
-//         return response()->file($path);
-//     }
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
-//     abort(404);
-// });
-Route::view('/', 'index');
+Route::resource('countries', CountryController::class);
+Route::resource('states',StateController::class);
+Route::resource('cities', CityController::class);
+
+require __DIR__.'/auth.php';

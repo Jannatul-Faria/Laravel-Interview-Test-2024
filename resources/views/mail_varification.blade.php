@@ -9,7 +9,7 @@
     <title>Bytedash - Admin Template</title>
 
     <!-- favicon -->
-    <link rel=icon href="html/favicons.png" sizes="16x16" type="icon/png">
+    <link rel=icon href="{{ asset ('assets') }}/favicons.png" sizes="16x16" type="icon/png">
     <!-- animate -->
     <link rel="stylesheet" href="{{ asset ('assets') }}/css/animate.css">
     <!-- bootstrap -->
