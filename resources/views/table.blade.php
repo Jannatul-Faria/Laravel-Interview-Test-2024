@@ -128,9 +128,19 @@
             </div>
         </div>
         <div class="dashboard__body">
-            <div class="dashboard__inner">
-                <div class="dashboard__inner__item dashboard__card bg__white padding-20 radius-10">
-                    <h4 class="dashboard__inner__item__header__title">Latest Order</h4>
+            <div class="dashboard__inner ">
+                
+                <div class="dashboard__inner__item dashboard__card bg__white padding-20 radius-10 ">
+                    <div class="dashboard__inner__header__flex">
+                        <h4 class="dashboard__inner__item__header__title">Countries List</h4>
+                        <div class="dashboard__inner__item__right recent_activities align-right">
+                            <div class="btn-wrapper">
+                                <a href="javascript:void(0)" class="cmn_btn btn_small radius-5" id="activity_btn">Add country<b style="top: 252px; left: -62.7656px;"></b></a>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    
                     <!-- Table Design One -->
                     <div class="tableStyle_one mt-4">
                         <div class="table_wrapper">
@@ -138,77 +148,21 @@
                             <table>
                                 <thead>
                                     <tr>
-                                        <th>Image</th>
-                                        <th>Product</th>
-                                        <th>Order Id</th>
-                                        <th>Customer name</th>
-                                        <th>Status</th>
-                                        <th>Date</th>
-                                        <th>Amout</th>
-                                        <th>Location</th>
+                                        <th>No</th>
+                                        <th>Countries Name</th>
+                                        <th>States</th>
+                                        <th>Cities</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td class="productWrap d-flex align-items-center">
-                                            <img src="{{ asset ('assets') }}/img/gallery/product1.jpg" alt="image">
-                                        </td>
-                                        <td>Nicole Brooks</td>
-                                        <td>5425683 </td>
-                                        <td>$Darlene Robertson</td>
-                                        <td  class="text-success">Delivered</td>
-                                        <td>24 May, 2022</td>
-                                        <td>$490</td>
-                                        <td>Geoegia,USA</td>
-                                        <td>
-                                            <!-- DropDown -->
-                                            <div class="dropdown custom__dropdown">
-                                                <button class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <i class="las la-ellipsis-h"></i>
-                                                </button>
-                                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
-                                                    <li><a class="dropdown-item" href="#">Edit</a></li>
-                                                    <li><a class="dropdown-item" href="#">Delete</a></li>
-                                                </ul>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="productWrap d-flex align-items-center">
-                                            <img src="{{ asset ('assets') }}/img/gallery/product2.jpg" alt="image">
-                                        </td>
-                                        <td>Nicole Brooks</td>
-                                        <td>5425683 </td>
-                                        <td>$Darlene Robertson</td>
-                                        <td class="text-warning">Pending</td>
-                                        <td>24 May, 2022</td>
-                                        <td>$490</td>
-                                        <td>Geoegia,USA</td>
-                                        <td>
-                                            <!-- DropDown -->
-                                            <div class="dropdown custom__dropdown">
-                                                <button class="dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <i class="las la-ellipsis-h"></i>
-                                                </button>
-                                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton2">
-                                                    <li><a class="dropdown-item" href="#">Edit</a></li>
-                                                    <li><a class="dropdown-item" href="#">Delete</a></li>
-                                                </ul>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="productWrap d-flex align-items-center">
                                             <img src="{{ asset ('assets') }}/img/gallery/product3.jpg" alt="image">
                                         </td>
                                         <td>Nicole Brooks</td>
-                                        <td>5425683 </td>
                                         <td>$Darlene Robertson</td>
                                         <td class="text-danger">Cancell</td>
-                                        <td>24 May, 2022</td>
-                                        <td>$490</td>
-                                        <td>Geoegia,USA</td>
                                         <td>
                                             <!-- DropDown -->
                                             <div class="dropdown custom__dropdown">
@@ -221,127 +175,8 @@
                                                 </ul>
                                             </div>
                                         </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="productWrap d-flex align-items-center">
-                                            <img src="{{ asset ('assets') }}/img/gallery/product4.jpg" alt="image">
-                                        </td>
-                                        <td>Nicole Brooks</td>
-                                        <td>5425683 </td>
-                                        <td>$Darlene Robertson</td>
-                                        <td class="text-blue">New Order</td>
-                                        <td>24 May, 2022</td>
-                                        <td>$490</td>
-                                        <td>Geoegia,USA</td>
-                                        <td>
-                                            <!-- DropDown -->
-                                            <div class="dropdown custom__dropdown">
-                                                <button class="dropdown-toggle" type="button" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <i class="las la-ellipsis-h"></i>
-                                                </button>
-                                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton4">
-                                                    <li><a class="dropdown-item" href="#">Edit</a></li>
-                                                    <li><a class="dropdown-item" href="#">Delete</a></li>
-                                                </ul>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="productWrap d-flex align-items-center">
-                                            <img src="{{ asset ('assets') }}/img/gallery/product1.jpg" alt="image">
-                                        </td>
-                                        <td>Nicole Brooks</td>
-                                        <td>5425683 </td>
-                                        <td>$Darlene Robertson</td>
-                                        <td  class="text-success">Delivered</td>
-                                        <td>24 May, 2022</td>
-                                        <td>$490</td>
-                                        <td>Geoegia,USA</td>
-                                        <td>
-                                            <!-- DropDown -->
-                                            <div class="dropdown custom__dropdown">
-                                                <button class="dropdown-toggle" type="button" id="dropdownMenuButton5" data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <i class="las la-ellipsis-h"></i>
-                                                </button>
-                                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton5">
-                                                    <li><a class="dropdown-item" href="#">Edit</a></li>
-                                                    <li><a class="dropdown-item" href="#">Delete</a></li>
-                                                </ul>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="productWrap d-flex align-items-center">
-                                            <img src="{{ asset ('assets') }}/img/gallery/product2.jpg" alt="image">
-                                        </td>
-                                        <td>Nicole Brooks</td>
-                                        <td>5425683 </td>
-                                        <td>$Darlene Robertson</td>
-                                        <td class="text-warning">Pending</td>
-                                        <td>24 May, 2022</td>
-                                        <td>$490</td>
-                                        <td>Geoegia,USA</td>
-                                        <td>
-                                            <!-- DropDown -->
-                                            <div class="dropdown custom__dropdown">
-                                                <button class="dropdown-toggle" type="button" id="dropdownMenuButton6" data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <i class="las la-ellipsis-h"></i>
-                                                </button>
-                                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton6">
-                                                    <li><a class="dropdown-item" href="#">Edit</a></li>
-                                                    <li><a class="dropdown-item" href="#">Delete</a></li>
-                                                </ul>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="productWrap d-flex align-items-center">
-                                            <img src="{{ asset ('assets') }}/img/gallery/product3.jpg" alt="image">
-                                        </td>
-                                        <td>Nicole Brooks</td>
-                                        <td>5425683 </td>
-                                        <td>$Darlene Robertson</td>
-                                        <td class="text-danger">Cancell</td>
-                                        <td>24 May, 2022</td>
-                                        <td>$490</td>
-                                        <td>Geoegia,USA</td>
-                                        <td>
-                                            <!-- DropDown -->
-                                            <div class="dropdown custom__dropdown">
-                                                <button class="dropdown-toggle" type="button" id="dropdownMenuButton7" data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <i class="las la-ellipsis-h"></i>
-                                                </button>
-                                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton7">
-                                                    <li><a class="dropdown-item" href="#">Edit</a></li>
-                                                    <li><a class="dropdown-item" href="#">Delete</a></li>
-                                                </ul>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="productWrap d-flex align-items-center">
-                                            <img src="{{ asset ('assets') }}/img/gallery/product4.jpg" alt="image">
-                                        </td>
-                                        <td>Nicole Brooks</td>
-                                        <td>5425683 </td>
-                                        <td>$Darlene Robertson</td>
-                                        <td class="text-blue">New Order</td>
-                                        <td>24 May, 2022</td>
-                                        <td>$490</td>
-                                        <td>Geoegia,USA</td>
-                                        <td>
-                                            <!-- DropDown -->
-                                            <div class="dropdown custom__dropdown">
-                                                <button class="dropdown-toggle" type="button" id="dropdownMenuButton8" data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <i class="las la-ellipsis-h"></i>
-                                                </button>
-                                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton8">
-                                                    <li><a class="dropdown-item" href="#">Edit</a></li>
-                                                    <li><a class="dropdown-item" href="#">Delete</a></li>
-                                                </ul>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                    </tr>                                   
+                                  
                                 </tbody>
                             </table>
 

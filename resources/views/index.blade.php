@@ -230,31 +230,25 @@
                                     <div class="col-xxl-3 col-xl-4 col-sm-6">
                                         <div class="dashboard_promo__single bg__white radius-10 padding-20">
                                             <span class="dashboard_promo__single__subtitle">Total Countries</span>
-                                            <h4 class="dashboard_promo__single__price mt-2">{{ $counteies }}</h4>
+                                            <h4 class="dashboard_promo__single__price mt-2">Countries</h4>
                                             <p class="dashboard_promo__single__para mt-3"><span class="percentage"> +20%</span> Than last month</p>
                                         </div>
                                     </div>
                                     <div class="col-xxl-3 col-xl-4 col-sm-6">
                                         <div class="dashboard_promo__single bg__white radius-10 padding-20">
-                                            <span class="dashboard_promo__single__subtitle">Total Orders</span>
-                                            <h4 class="dashboard_promo__single__price mt-2">810</h4>
+                                            <span class="dashboard_promo__single__subtitle">Total States</span>
+                                            <h4 class="dashboard_promo__single__price mt-2">States</h4>
                                             <p class="dashboard_promo__single__para mt-3"><span class="percentage">+19%</span> Than last month</p>
                                         </div>
                                     </div>
                                     <div class="col-xxl-3 col-xl-4 col-sm-6">
                                         <div class="dashboard_promo__single bg__white radius-10 padding-20">
-                                            <span class="dashboard_promo__single__subtitle">Total Customers</span>
-                                            <h4 class="dashboard_promo__single__price mt-2">240</h4>
+                                            <span class="dashboard_promo__single__subtitle">Total City</span>
+                                            <h4 class="dashboard_promo__single__price mt-2">Cities</h4>
                                             <p class="dashboard_promo__single__para mt-3"><span class="percentage"> +08%</span> Than last month</p>
                                         </div>
                                     </div>
-                                    <div class="col-xxl-3 col-xl-4 col-sm-6">
-                                        <div class="dashboard_promo__single bg__white radius-10 padding-20">
-                                            <span class="dashboard_promo__single__subtitle">Total Revenue</span>
-                                            <h4 class="dashboard_promo__single__price mt-2">$10,800</h4>
-                                            <p class="dashboard_promo__single__para mt-3"><span class="percentage percentDown"> -12%</span> Than last month</p>
-                                        </div>
-                                    </div>
+                                    
                                 </div>
                             </div>
                             <div class="row g-4 mt-1">

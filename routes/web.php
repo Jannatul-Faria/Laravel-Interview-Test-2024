@@ -7,7 +7,7 @@ use App\Http\Controllers\CountryController;
 use App\Http\Controllers\ProfileController;
 
 Route::get('/', function () {
-    return view('index');
+    return view('index')->with('countries');
 });
 Route::get('/form', function () {
     return view('basic_form');

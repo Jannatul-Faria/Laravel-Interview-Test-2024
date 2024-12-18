@@ -30,7 +30,18 @@ class CountryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name'=> 'required|unique:countries'
+        ]);
+
+        $country=Country::create([
+            'name'=> $request->name,
+        ]);
+
+        return response()->json([
+            'success'=>true,
+            'data'=>$country,
+        ]);
     }
 
     /**
@@ -62,6 +73,9 @@ class CountryController extends Controller
      */
     public function destroy(Country $country)
     {
-        //
+        $country->delete();
+        return response()->json([
+            'success'=>true,
+        ]);
     }
 }
