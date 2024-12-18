@@ -14,6 +14,7 @@ class State extends Model
     
     protected $fillable=[
         'name',
+        'countries_id',
 
     ];
     public function cities():HasMany{
