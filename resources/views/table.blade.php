@@ -2,6 +2,7 @@
 @extends('layout.app')
 @section('content')
 
+@include('includes.sidenav')
     <div class="dashboard__right">
         <div class="dashboard__header single_border_bottom">
             <div class="row gx-4 align-items-center justify-content-between">

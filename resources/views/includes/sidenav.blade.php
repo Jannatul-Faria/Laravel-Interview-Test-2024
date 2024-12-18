@@ -43,16 +43,16 @@
 
               
                 <li class="dashboard__bottom__list__item has-children">
-                    <a href="javascript:void(0)"><i class="material-symbols-outlined">group</i> <span class="icon_title">User</span></a>
+                    <a href="{{ route('profile.edit') }}"><i class="material-symbols-outlined">group</i> <span class="icon_title">User</span></a>
                     <ul class="submenu">
                         <li class="dashboard__bottom__list__item">
-                            <a href="sign_in.html">Login</a>
+                            <a href="{{ route('login') }}">Login</a>
                         </li>
                         <li class="dashboard__bottom__list__item">
-                            <a href="sign_up.html">Register</a>
+                            <a href="{{ route('register') }}">Register</a>
                         </li>
                         <li class="dashboard__bottom__list__item">
-                            <a href="forgot_password.html">Reset Password</a>
+                            <a href="{{ route('password.request') }}">Reset Password</a>
                         </li>
                         <li class="dashboard__bottom__list__item">
                             <a href="mail_varification.html">Mail Varification</a>
@@ -60,7 +60,12 @@
                     </ul>
                 </li>
                 <li class="dashboard__bottom__list__item">
-                    <a href="javascript:void(0)"><i class="material-symbols-outlined">logout</i> <span class="icon_title">Log Out</span></a>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <a href="{{ route('logout') }}"  onclick="event.preventDefault();
+                                            this.closest('form').submit();"><i class="material-symbols-outlined">logout</i> <span class="icon_title">Log Out</span></a>
+                    </form>
+                   
                 </li>
             </ul>
         </div>

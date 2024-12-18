@@ -7,7 +7,7 @@ use App\Http\Controllers\CountryController;
 use App\Http\Controllers\ProfileController;
 
 Route::get('/', function () {
-    return view('index')->with('countries');
+    return view('index');
 });
 Route::get('/form', function () {
     return view('basic_form');
@@ -15,7 +15,8 @@ Route::get('/form', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->name('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

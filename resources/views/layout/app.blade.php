@@ -23,7 +23,7 @@
     <div class="dashboard__area">
         <div class="container-fluid p-0">
             <div class="dashboard__contents__wrapper">
-                @include('includes.sidenav')
+               
                @yield('content')
             </div>
         </div>
