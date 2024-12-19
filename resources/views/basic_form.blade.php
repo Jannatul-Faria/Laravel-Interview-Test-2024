@@ -129,12 +129,201 @@
         <div class="dashboard__body">
             <div class="dashboard__inner">
                 <div class="row g-4">
-                    <div class="col-xxl-6 col-lg-12">
+                    <div class="col-xxl-12 col-lg-12">
                         <div class="dashboard__card bg__white padding-20 radius-10">
-                            <div class="dashboard__card__header">
-                                <h4 class="dashboard__card__header__title">Horizontal Input</h4>
+                            
+                            <div class="container">
+                                <div class="dashboard__card__header">
+                                    <h4 class="dashboard__card__header__title">Country-State-City CRUD with AJAX</h4>
+                                </div>
+                                
+                                <hr>
+                        
+                                <!-- Country Section -->
+                                <h6 class="pb-3">Manage Countries</h6>
+                                <form id="countryForm" class="mb-3">
+                                    <div class="input-group form__input__single">
+                                        <input type="text" name="name" id="countryName" class="form-control radius-5" placeholder="Enter Country Name" required>
+                                        <button type="submit" class="cmn_btn btn_small radius-5" id="activity_btn">Add Country </button>
+                                        
+                                    </div>
+                                </form>
+                                <div id="countriesList" class="mb-5"></div>
+                        
+                                <!-- State Section -->
+                                <h6 class="pb-3">Manage States</h6>
+                                <form id="stateForm" class="mb-3">
+                                    <div class="input-group">
+                                        <select name="country_id" id="stateCountry" class="form-select" required>
+                                            <option value="">Select Country</option>
+                                        </select>
+                                        <input type="text" name="name" id="stateName" class="form-control" placeholder="Enter State Name" required>
+                                        <button type="submit" class="cmn_btn btn_small radius-5" id="activity_btn">Add State </button>
+                                    </div>
+                                </form>
+                                <div id="statesList" class="mb-5"></div>
+                        
+                                <!-- City Section -->
+                                <h6 class="pb-3">Manage Cities</h6>
+                                <form id="cityForm" class="mb-3">
+                                    <div class="input-group">
+                                        <select name="state_id" id="cityState" class="form-select" required>
+                                            <option value="">Select State</option>
+                                        </select>
+                                        <input type="text" name="name" id="cityName" class="form-control" placeholder="Enter City Name" required>
+                                        <button type="submit" class="cmn_btn btn_small radius-5" id="activity_btn">Add City </button>
+                                    </div>
+                                </form>
+                                <div id="citiesList"></div>
                             </div>
-                            <div class="dashboard__card__inner mt-4">
+                        
+                            <!-- Scripts -->
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                            <script>
+                                // CSRF Token setup for AJAX requests
+                                $.ajaxSetup({
+                                    headers: {
+                                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                    }
+                                });
+                        
+                                // Fetch and Display Countries
+                                function fetchCountries() {
+                                    $.get('/countries', function(data) {
+                                        let countryOptions = '<option value="">Select Country</option>';
+                                        let countryHtml = '<ul class="list-group">';
+                                        data.forEach(country => {
+                                            countryOptions += `<option value="${country.id}">${country.name}</option>`;
+                                            countryHtml += `
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    ${country.name}
+                                                    <button class="btn btn-danger btn-sm" onclick="deleteCountry(${country.id})">Delete</button>
+                                                </li>`;
+                                        });
+                                        countryHtml += '</ul>';
+                                        $('#stateCountry').html(countryOptions);
+                                        $('#countriesList').html(countryHtml);
+                                    });
+                                }
+                        
+                                // Add Country
+                                $('#countryForm').submit(function(e) {
+                                    e.preventDefault();
+                                    const name = $('#countryName').val();
+                                    $.post('/countries', { name }, function(response) {
+                                        alert('Country added successfully');
+                                        fetchCountries();
+                                        $('#countryName').val('');
+                                    });
+                                });
+                        
+                                // Delete Country
+                                function deleteCountry(id) {
+                                    $.ajax({
+                                        url: `/countries/${id}`,
+                                        type: 'DELETE',
+                                        success: function() {
+                                            alert('Country deleted');
+                                            fetchCountries();
+                                        }
+                                    });
+                                }
+                        
+                                // Fetch and Display States
+                                function fetchStates() {
+                                    $.get('/states', function(data) {
+                                        let stateOptions = '<option value="">Select State</option>';
+                                        let stateHtml = '<ul class="list-group">';
+                                        data.forEach(state => {
+                                            stateOptions += `<option value="${state.id}">${state.name}</option>`;
+                                            stateHtml += `
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    ${state.name} (Country: ${state.country.name})
+                                                    <button class="btn btn-danger btn-sm" onclick="deleteState(${state.id})">Delete</button>
+                                                </li>`;
+                                        });
+                                        stateHtml += '</ul>';
+                                        $('#cityState').html(stateOptions);
+                                        $('#statesList').html(stateHtml);
+                                    });
+                                }
+                        
+                                // Add State
+                                $('#stateForm').submit(function(e) {
+                                    e.preventDefault();
+                                    const name = $('#stateName').val();
+                                    const country_id = $('#stateCountry').val();
+                                    $.post('/states', { name, country_id }, function(response) {
+                                        alert('State added successfully');
+                                        fetchStates();
+                                        $('#stateName').val('');
+                                        $('#stateCountry').val('');
+                                    });
+                                });
+                        
+                                // Delete State
+                                function deleteState(id) {
+                                    $.ajax({
+                                        url: `/states/${id}`,
+                                        type: 'DELETE',
+                                        success: function() {
+                                            alert('State deleted');
+                                            fetchStates();
+                                        }
+                                    });
+                                }
+                        
+                                // Fetch and Display Cities
+                                function fetchCities() {
+                                    $.get('/cities', function(data) {
+                                        let cityHtml = '<ul class="list-group">';
+                                        data.forEach(city => {
+                                            cityHtml += `
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    ${city.name} (State: ${city.state.name})
+                                                    <button class="btn btn-danger btn-sm" onclick="deleteCity(${city.id})">Delete</button>
+                                                </li>`;
+                                        });
+                                        cityHtml += '</ul>';
+                                        $('#citiesList').html(cityHtml);
+                                    });
+                                }
+                        
+                                // Add City
+                                $('#cityForm').submit(function(e) {
+                                    e.preventDefault();
+                                    const name = $('#cityName').val();
+                                    const state_id = $('#cityState').val();
+                                    $.post('/cities', { name, state_id }, function(response) {
+                                        alert('City added successfully');
+                                        fetchCities();
+                                        $('#cityName').val('');
+                                        $('#cityState').val('');
+                                    });
+                                });
+                        
+                                // Delete City
+                                function deleteCity(id) {
+                                    $.ajax({
+                                        url: `/cities/${id}`,
+                                        type: 'DELETE',
+                                        success: function() {
+                                            alert('City deleted');
+                                            fetchCities();
+                                        }
+                                    });
+                                }
+                        
+                                // Initial Fetch
+                                $(document).ready(function() {
+                                    fetchCountries();
+                                    fetchStates();
+                                    fetchCities();
+                                });
+                            </script>
+
+
+                            {{-- <div class="dashboard__card__inner mt-4">
                                 <div class="form__input">
                                     <form action="#">
                                         <div class="form__input__flex">
@@ -195,11 +384,11 @@
                                         </div>
                                     </form>
                                 </div>
-                            </div>
-                    </div>
+                            </div> --}}
+                        </div>
                     </div>
 
-                    <div class="col-lg-6">
+                    {{-- <div class="col-lg-6">
                         <div class="dashboard__card bg__white padding-20 radius-10">
                             <div class="dashboard__card__header">
                                 <h4 class="dashboard__card__header__title">Message Input</h4>
@@ -226,7 +415,7 @@
                                 </div>
                             </div>
                     </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

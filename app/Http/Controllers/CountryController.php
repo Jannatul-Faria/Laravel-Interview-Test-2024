@@ -13,8 +13,8 @@ class CountryController extends Controller
      */
     public function index()
     {
-        $countries=Country::all();
-       return view('table',compact('countries'));
+    //     $countries=Country::all();
+    //    return view('table',compact('countries'));
     }
 
     /**
@@ -30,18 +30,18 @@ class CountryController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name'=> 'required|unique:countries'
-        ]);
+        // $request->validate([
+        //     'name'=> 'required|unique:countries'
+        // ]);
 
-        $country=Country::create([
-            'name'=> $request->name,
-        ]);
+        // $country=Country::create([
+        //     'name'=> $request->name,
+        // ]);
 
-        return response()->json([
-            'success'=>true,
-            'data'=>$country,
-        ]);
+        // return response()->json([
+        //     'success'=>true,
+        //     'data'=>$country,
+        // ]);
     }
 
     /**
@@ -73,9 +73,9 @@ class CountryController extends Controller
      */
     public function destroy(Country $country)
     {
-        $country->delete();
-        return response()->json([
-            'success'=>true,
-        ]);
+        // $country->delete();
+        // return response()->json([
+        //     'success'=>true,
+        // ]);
     }
 }

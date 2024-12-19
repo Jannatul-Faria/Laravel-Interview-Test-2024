@@ -16,9 +16,11 @@
                             <div class="single_input">
                                 <label class="label_title" for="email" :value="__('Email')">Email</label>
                                 <div class="include_icon">
-                                    <input class="form--control radius-5" id="email" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" placeholder="Enter your password">
+                                    <input class="form--control radius-5 " id="email" type="email" name="email" :value="old('email')" required autofocus autocomplete="username">
                                     <div class="icon"><span class="material-symbols-outlined">mail</span></div>
                                 </div>
+                               
+                                <x-input-error :messages="$errors->get('email')" class="mt-2 text-danger" />
                             </div>
                             <div class="single_input">
                                 <label class="label_title" for="password" :value="__('Password')" >Password</label>
@@ -29,6 +31,8 @@
                                     required autocomplete="current-password" type="password">
                                     <div class="icon"><span class="material-symbols-outlined">lock</span></div>
                                 </div>
+                                
+                                <x-input-error :messages="$errors->get('password')" class="mt-2 text-danger" />
                             </div>
                             <div class="loginForm__wrapper__remember single_input">
                                 <div class="dashboard_checkBox ">
