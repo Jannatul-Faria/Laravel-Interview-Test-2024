@@ -25,9 +25,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::resource('countries', CountryController::class);
-Route::resource('states',StateController::class);
-Route::resource('cities', CityController::class);
+// Route::resource('countries', CountryController::class);
+// Route::resource('states',StateController::class);
+// Route::resource('cities', CityController::class);
 
 Route::controller(LocationController::class)->group(function(){
     //country crud
