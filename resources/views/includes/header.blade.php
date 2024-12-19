@@ -2,6 +2,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <title>Bytedash - Admin Template</title>
 
 <!-- favicon -->
@@ -30,4 +31,6 @@
  <!-- Country Select Css -->
  <link rel="stylesheet" href="{{ asset ('assets') }}/css/niceCountryInput.css">
  <link rel="stylesheet" href="{{ asset ('assets') }}/css/jsuites.css">
- <!-- dark css -->
+
+
+ @stack('per_page_css')

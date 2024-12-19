@@ -18,31 +18,12 @@
  <script src="{{ asset ('assets') }}/js/niceCountryInput.js"></script>
 <!-- main js -->
 <script src="{{ asset ('assets') }}/js/main.js"></script>
+@stack('per_page_js')
 
 
 
-{{-- 
- <!-- jquery -->
- <script src="{{ asset ('assets') }}/js/jquery-3.6.4.min.js"></script>
- <!-- jquery Migrate -->
- <script src="{{ asset ('assets') }}/js/jquery-migrate-3.4.1.min.js"></script>
- <!-- bootstrap -->
- <script src="{{ asset ('assets') }}/js/bootstrap.bundle.min.js"></script>
- <!-- Slick Slider -->
- <script src="{{ asset ('assets') }}/js/slick.js"></script>
- <!-- Plugins Js -->
- <script src="{{ asset ('assets') }}/js/plugin.js"></script> --}}
 
-
- <!-- Multiple Country Select Js -->
- {{-- <script src="{{ asset ('assets') }}/js/jsuites.js"></script>
- <!-- Fancy box Js -->
- <script src="{{ asset ('assets') }}/js/fancybox.umd.js"></script>
- <!-- main js -->
- <script src="{{ asset ('assets') }}/js/main.js"></script> --}}
-
-
-<script>
+{{-- <script>
     $(function () {
         $(".countryMap").mapael({
             map: {
@@ -1481,4 +1462,4 @@
             }
         });
     });
-</script>
+</script> --}}

@@ -18,14 +18,14 @@ class LocationController extends Controller
 
     public function storeCountry(Request $request)
     {
-        $request->validate(['name' => 'required|string|max:255']);
+        $request->validate(['countryName' => 'required|string|max:255']);
         $country = Country::create($request->all());
         return response()->json(['success' => true, 'country' => $country]);
     }
 
     public function updateCountry(Request $request, $id)
     {
-        $request->validate(['name' => 'required|string|max:255']);
+        $request->validate(['countryName' => 'required|string|max:255']);
         $country = Country::findOrFail($id);
         $country->update($request->all());
         return response()->json(['success' => true, 'country' => $country]);
@@ -45,14 +45,14 @@ class LocationController extends Controller
 
     public function storeState(Request $request)
     {
-        $request->validate(['name' => 'required', 'country_id' => 'required|exists:countries,id']);
+        $request->validate(['stateName' => 'required', 'country_id' => 'required|exists:countries,id']);
         $state = State::create($request->all());
         return response()->json(['success' => true, 'state' => $state]);
     }
 
     public function updateState(Request $request, $id)
     {
-        $request->validate(['name' => 'required', 'country_id' => 'required|exists:countries,id']);
+        $request->validate(['stateName' => 'required', 'country_id' => 'required|exists:countries,id']);
         $state = State::findOrFail($id);
         $state->update($request->all());
         return response()->json(['success' => true, 'state' => $state]);
@@ -72,14 +72,14 @@ class LocationController extends Controller
 
     public function storeCity(Request $request)
     {
-        $request->validate(['name' => 'required', 'state_id' => 'required|exists:states,id']);
+        $request->validate(['cityName' => 'required', 'state_id' => 'required|exists:states,id']);
         $city = City::create($request->all());
         return response()->json(['success' => true, 'city' => $city]);
     }
 
     public function updateCity(Request $request, $id)
     {
-        $request->validate(['name' => 'required', 'state_id' => 'required|exists:states,id']);
+        $request->validate(['cityName' => 'required', 'state_id' => 'required|exists:states,id']);
         $city = City::findOrFail($id);
         $city->update($request->all());
         return response()->json(['success' => true, 'city' => $city]);
