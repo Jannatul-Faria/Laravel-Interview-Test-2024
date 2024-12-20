@@ -32,5 +32,4 @@
  <link rel="stylesheet" href="{{ asset ('assets') }}/css/niceCountryInput.css">
  <link rel="stylesheet" href="{{ asset ('assets') }}/css/jsuites.css">
 
-
  @stack('per_page_css')
