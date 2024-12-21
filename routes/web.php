@@ -1,20 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CityController;
-use App\Http\Controllers\StateController;
+
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\ProfileController;
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
 Route::get('/form', function () {
     return view('basic_form');
 })->name('form');
 
-Route::get('/dashboard', function () {
+Route::get('/', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
@@ -44,4 +43,6 @@ Route::controller(LocationController::class)->group(function () {
     Route::put('/cities/{id}', 'updateCity');
     Route::delete('/cities/{id}', 'deleteCity');
 });
+
+Route::resource('countries', CountryController::class);
 require __DIR__.'/auth.php';

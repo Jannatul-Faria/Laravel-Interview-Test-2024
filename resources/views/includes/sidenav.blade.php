@@ -30,7 +30,7 @@
                     <a href="javascript:void(0)"><i class="material-symbols-outlined">Table</i> <span class="icon_title">Tables</span></a>
                     <ul class="submenu">
                         <li class="dashboard__bottom__list__item">
-                            <a href=""><span class="icon_title">Countries</span></a>
+                            <a href="{{ url('countries') }}"><span class="icon_title">Countries</span></a>
                         </li>
                         <li class="dashboard__bottom__list__item">
                             <a href=""><span class="icon_title">States</span></a>

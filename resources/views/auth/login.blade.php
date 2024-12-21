@@ -56,7 +56,7 @@
                                 
                             </div>
                             <div class="btn-wrapper mt-4">
-                                <p class="loginForm__wrapper__signup"><span>Don’t have an account ? </span> <a href="sign_up.html" class="loginForm__wrapper__signup__btn">Sign Up</a></p>
+                                <p class="loginForm__wrapper__signup"><span>Don’t have an account ? </span> <a href="{{ url('register') }}" class="loginForm__wrapper__signup__btn">Sign Up</a></p>
                                 <div class="loginForm__wrapper__another d-flex flex-column gap-2 mt-3">
                                     <a href="javascript:void(0)" class="loginForm__wrapper__another__btn radius-5 w-100"><img src="{{ asset ('assets') }}/img/icon/googleIocn.svg" alt="" class="icon"> Login With Google</a>
                                     <a href="javascript:void(0)" class="loginForm__wrapper__another__btn radius-5 w-100"><img src="{{ asset ('assets') }}/img/icon/fbIcon.svg" alt="" class="icon">Login With Facebook</a>
