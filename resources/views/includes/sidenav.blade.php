@@ -23,7 +23,7 @@
                     </ul>
                 </li>
                 <li class="dashboard__bottom__list__item has-children">
-                    <a href="{{ route('form') }}"><span class="icon_title">Form</span></a>
+                    <a href=""><span class="icon_title">Form</span></a>
                 </li>
 
                 <li class="dashboard__bottom__list__item has-children ">
@@ -33,10 +33,10 @@
                             <a href="{{ url('countries') }}"><span class="icon_title">Countries</span></a>
                         </li>
                         <li class="dashboard__bottom__list__item">
-                            <a href=""><span class="icon_title">States</span></a>
+                            <a href="{{ url('states') }}"><span class="icon_title">States</span></a>
                         </li>
                         <li class="dashboard__bottom__list__item">
-                            <a href=""><span class="icon_title">Cities</span></a>
+                            <a href="{{ url('cities') }}"><span class="icon_title">Cities</span></a>
                         </li>
                     </ul>
                 </li>

@@ -12,7 +12,7 @@ class City extends Model
     use HasFactory; 
     
     protected $fillable=[
-        'cityName',
+        'name',
         'state_id'
     ];
     public function states():BelongsTo{

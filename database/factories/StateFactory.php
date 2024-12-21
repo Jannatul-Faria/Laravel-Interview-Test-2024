@@ -16,7 +16,7 @@ class StateFactory extends Factory
    public function definition(): array
     {
         return [
-            'stateName'=> $this->faker->state,
+            'name'=> $this->faker->state,
             'countries_id'=>Country::inRandomOrder()->first()->id,
         ];
     }
