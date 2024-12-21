@@ -8,9 +8,6 @@ use App\Http\Controllers\CountryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LocationController;
 
-
-
-
 Route::get('/', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
