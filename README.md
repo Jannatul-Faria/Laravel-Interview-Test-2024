@@ -29,7 +29,7 @@ This project is a Laravel 11 application that implements a Country-State-City CR
 - Laravel 11 used as the framework.
 - Clean, maintainable, and readable code.
 - Comments added for complex logic.
-- Basic tests included for core functionality.
+
 
 ---
 
@@ -45,8 +45,8 @@ This project is a Laravel 11 application that implements a Country-State-City CR
 
 1. **Clone the Repository**:
    ```bash
-   git clone <repository-url>
-   cd CountryStateCityCRUD
+   git clone https://github.com/Jannatul-Faria/Laravel-Interview-Test-2024.git
+   cd Laravel-Interview-Test-2024
    ```
 
 2. **Install Dependencies**:
@@ -127,27 +127,14 @@ This project is a Laravel 11 application that implements a Country-State-City CR
   - Use email or username.
 - **Registration**:
   - Securely create an account.
-- **Password Reset**:
-  - Request and reset password via email.
 - **AJAX Validation**:
   - Handle errors in real-time.
 
 ---
 
-<!-- ## Testing
 
-1. **Run Tests**:
-   ```bash
-   php artisan test
-   ```
 
-2. **Example Test Cases**:
-   - Verify AJAX CRUD operations for Country, State, and City.
-   - Validate authentication workflows.
-
---- -->
-
-<!-- ## Folder Structure
+## Folder Structure
 
 ```
 CountryStateCityCRUD/
@@ -170,10 +157,10 @@ CountryStateCityCRUD/
 │       ├── app.js
 ├── routes/
 │   ├── web.php
-└── tests/
+└──
 ```
 
---- -->
+---
 
 ## Contributions
 Contributions are welcome! Feel free to fork this repository, make your changes, and submit a pull request.
